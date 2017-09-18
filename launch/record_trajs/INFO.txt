@@ -1,0 +1,25 @@
+
+TO RECORD TRAJECTORIES CONTROLLING THE ROBOT:
+
+1. Run the launch file with desired scenario: 
+	centre_sportif
+	uva_demo
+	elderly_center_scenario
+
+2. Run the keyboard teleop to be able to send controls to the robot:
+	rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+3. Run the launch file record_bag_trajs.launch (the recording node).
+
+
+4. Set the desired situation:
+	- Set the initial robot position in Rviz.
+	- In Stage, move the people (purple blocks) to the desired positions.
+
+5. Record the trajectory:
+	- Use the tool "Publish Point" of Rviz to click on the point of the map
+      that is going to be the goal for the robot.
+	- A red circle will appear on the goal, and the recording will start.
+      Just move the robot with the keyboard from its current position to the goal.
+	- The recording will stop automatically when the robot is very close to
+      the goal.

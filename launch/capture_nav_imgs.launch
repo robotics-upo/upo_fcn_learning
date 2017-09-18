@@ -1,0 +1,17 @@
+<!-- launch node for transforming bags data in images -->
+<launch>
+
+	<!-- launch-prefix="xterm -e gdb (doble hyphen)args"-->
+  	<node pkg="upo_cnn_learning" type="capture_node" name="capture_node" output="screen" >
+		<param name="bag_directory" value="$(find upo_nav_irl)/data/set3/test" />
+		<param name="use_static_map" value="false"/>
+		<param name="add_demo_path" value="true" />
+		<param name="only_path_label" value="true" />
+		<param name="store_dir" value="$(find upo_cnn_learning)/captures/test_set3/" />
+		<param name="img_pixels" value="200" />
+		<param name="img_resolution" value="0.05" />
+ 		<param name="use_greyscale" value="true" />
+ 		<param name="add_people_orientation" value="true" />
+	</node>
+
+</launch>

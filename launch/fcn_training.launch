@@ -1,0 +1,23 @@
+<!-- -->
+<launch>
+
+  	<node pkg="upo_fcn_learning" type="fcn_path_planning.py" name="fcn_path_planning" output="screen" >
+
+		<!--normalize image values between [0-1]-->
+		<param name="normalize_image_values" value="True" /> 
+		<!--Normalize data into six categories (true) distinguish between front and back of the person,
+		or five (false): front and back with the same value -->
+		<param name="use_six_categories" value="True" /> 
+		<!-- If we want to store the learning dataset images in .npy files -->
+		<param name="create_npy_files" value="True" /> 
+		<!-- If we already have the data in stored in .npy files, we can load them directly -->
+		<param name="load_npy_files" value="False" />
+		<!-- Route to the learning dataset. Inside we need to have the data in the folder 'input' and 'labels' -->
+		<param name="dataset_dir" value="$(find upo_fcn_learning)/data/real_trajs_dataset/set1/" />
+		<!-- Route to the directory where we want to store the results -->
+		<param name="save_dir" value="$(find upo_fcn_learning)/data/real_trajs_dataset/set1/" />
+
+	</node>
+
+</launch>
+

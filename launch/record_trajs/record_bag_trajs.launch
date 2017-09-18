@@ -1,0 +1,35 @@
+<!-- -->
+<launch>
+
+  <node pkg="upo_cnn_learning" type="record_bag_trajectories" name="record_bag_trajectories" output="screen" >
+
+	<!-- Configuration and directories -->
+	<param name="store_dir" value="$(find upo_cnn_learning)/bags/real_trajs/" />
+	<param name="store_frame" value="odom" />
+	<param name="use_rrt" value="false" />
+	<param name="random_scenario" value="true" />
+
+	<!-- if random scenario is true -->
+	<param name="robot_poses" value="50" />
+	<param name="people_poses" value="10" />
+	<param name="goal_poses" value="5" />
+
+	<!-- topic names for subscription -->
+	<param name="people_topic" value="/people/navigation" />
+	<param name="robot_topic" value="/odom" />
+	<param name="goal_topic" value="/clicked_point" />
+	<param name="pointcloud_topic" value="/scan360/point_cloud" />
+	<param name="vels_topic" value="/cmd_vel" />
+
+	<!-- Initial position of the robot (map coordinates) -->
+	<param name="initial_x" value="9" /> 
+	<param name="initial_y" value="12" /> 
+	<param name="initial_theta" value="0" /> 
+
+
+  </node>
+
+  <!--node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen" /-->
+
+
+</launch>
