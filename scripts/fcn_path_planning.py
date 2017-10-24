@@ -528,19 +528,19 @@ class TestCNN(object):
     # Loss
     loss = hist.history["loss"]
     np_loss = np.array(loss)
-    np.savetxt((saveroute+"loss_history.txt"), np_loss, delimiter=",")
+    np.savetxt((self.save_dir+"loss_history.txt"), np_loss, delimiter=",")
     # Val_loss
     #val_loss = hist.history["val_loss"]
     #np_val_loss = np.array(val_loss)
-    #np.savetxt((saveroute+"val_loss_history.txt"), np_val_loss, delimiter=",")
+    #np.savetxt((self.save_dir+"val_loss_history.txt"), np_val_loss, delimiter=",")
     # Mean squared error
     mse = hist.history["mean_squared_error"]
     np_mse = np.array(mse)
-    np.savetxt((saveroute+"mse_history.txt"), np_mse, delimiter=",")
+    np.savetxt((self.save_dir+"mse_history.txt"), np_mse, delimiter=",")
     # Mean absolute error
     mae = hist.history["mean_absolute_error"]
     np_mae = np.array(mae)
-    np.savetxt((saveroute+"mae_history.txt"), np_mae, delimiter=",")
+    np.savetxt((self.save_dir+"mae_history.txt"), np_mae, delimiter=",")
     
     
     plt.figure(1)
